@@ -1,5 +1,6 @@
 #!/bin/bash
 apt-get update
+apt-get upgrade
 
 #COMMENT OUT OR IN LINES AS APPROPRIATE
 INCLUDED_TECH=()
