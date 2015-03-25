@@ -1,15 +1,15 @@
 #!/bin/bash
 apt-get update
-apt-get upgrade
+apt-get upgrade -y
 
 #COMMENT OUT OR IN LINES AS APPROPRIATE
 INCLUDED_TECH=()
 INCLUDED_TECH+=("node")
 INCLUDED_TECH+=("mongodb")
 INCLUDED_TECH+=("redis")
-# INCLUDED_TECH+=("apache")
-# INCLUDED_TECH+=("mysql")
-# INCLUDED_TECH+=("php")
+INCLUDED_TECH+=("apache")
+INCLUDED_TECH+=("mysql")
+INCLUDED_TECH+=("php")
 
 SCRIPT_LOCATION="/vagrant/scripts/setup-"
 
