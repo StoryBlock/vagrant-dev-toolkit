@@ -7,6 +7,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	#Give Box it's own IP
 	config.vm.network "private_network", ip: "192.168.34.110"
+	
+	#or would you rather use port forwarding? comment out that last line and add these:
+	# config.vm.network :forwarded_port, guest: 80, host: 8888 
+	# config.vm.network :forwarded_port, guest: 3000, host: 3000 #common port for node, etc
 
 	#Sync parent folder. Clone this repo into project folder.
 	config.vm.synced_folder "../", "/parent"
