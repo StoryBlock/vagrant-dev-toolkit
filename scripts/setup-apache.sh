@@ -1,1 +1,1 @@
-apt-get install apache2
+apt-get install apache2 -y
