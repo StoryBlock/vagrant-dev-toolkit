@@ -2,6 +2,10 @@
 apt-get update
 apt-get upgrade -y
 
+#INSTALL BASE
+chmod +x "/vagrant/scripts/base.sh"
+$include "/vagrant/scripts/base.sh"
+
 #COMMENT OUT OR IN LINES AS APPROPRIATE
 INCLUDED_TECH=()
 INCLUDED_TECH+=("node")
@@ -19,3 +23,6 @@ for i in ${INCLUDED_TECH[@]}; do
 	chmod +x "${SCRIPT_LOCATION}${i}.sh"
 	$include "${SCRIPT_LOCATION}${i}.sh"
 done
+
+echo "All Done!"
+ls

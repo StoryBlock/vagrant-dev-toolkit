@@ -14,7 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	# Sync parent folder. Clone this repo into project folder.
 	# I Like to work this way so I don't have vagrant files running all over my code.
-	config.vm.synced_folder "../", "/parent"
+	# Parent folder will have the name of your app
+	config.vm.synced_folder "../", "/home/vagrant/"+File.basename(File.expand_path('..'))
 
 	# EDIT THE SCRIPT REFERENCED BELOW TO 
 	config.vm.provision "shell", path: "setup.sh"
@@ -22,6 +23,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provider "virtualbox" do |v|
 		#NAME THE VM -- You'll probably want to rename this box on a per-project basis.
 		#For now, it should inherit the name of the parent folder
-		v.name = "VAGRANT DEV TOOLKIT: " + File.basename(Dir.getwd+"/..")
+		v.name = "VAGRANT DEV TOOLKIT: " + File.basename(File.expand_path('..'))
+
+		# 512 is pretty tight to run Node.js on, if you're in to that sort of thing. I've boosted this.
+		v.memory = 1024
 	end	
 end
