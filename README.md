@@ -9,4 +9,16 @@ Intended usage:
 - Stand up vagrant box.
 - Dev.
 
+Current setup scripts include:
+- node
+- mongodb
+- meteor
+- redis
+- apache
+- nginx
+- mysql
+- php 
+
+Note: I haven't tested all of these 100%.
+
 My plan is to slowly add baseline config files for each platform so that I can get up and running under different configs as quick as possible.
