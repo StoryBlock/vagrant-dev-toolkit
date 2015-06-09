@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provider "virtualbox" do |v|
 		#NAME THE VM -- You'll probably want to rename this box on a per-project basis.
 		#For now, it should inherit the name of the parent folder
-		v.name = "VAGRANT DEV TOOLKIT: " + File.basename(File.expand_path('..'))
+		v.name = "VAGRANT DEV TOOLKIT - " + File.basename(File.expand_path('..'))
 
 		# 512 is pretty tight to run Node.js on, if you're in to that sort of thing. I've boosted this.
 		v.memory = 1024
