@@ -1,6 +1,6 @@
 #!/bin/bash
-apt-get update
-apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 
 #INSTALL BASE
 chmod +x "/vagrant/scripts/base.sh"
@@ -23,6 +23,9 @@ for i in ${INCLUDED_TECH[@]}; do
 	chmod +x "${SCRIPT_LOCATION}${i}.sh"
 	$include "${SCRIPT_LOCATION}${i}.sh"
 done
+
+chmod +x "/vagrant/custom.sh"
+$include "/vagrant/custom.sh"
 
 echo "All Done!"
 ls
