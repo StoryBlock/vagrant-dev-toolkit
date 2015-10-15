@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.synced_folder "../", "/home/vagrant/"+File.basename(File.expand_path('..'))
 
 	# EDIT THE SCRIPT REFERENCED BELOW TO 
-	config.vm.provision "shell", path: "setup.sh"
+	config.vm.provision "shell", path: "setup.sh", privileged: false
 
 	config.vm.provider "virtualbox" do |v|
 		#NAME THE VM -- You'll probably want to rename this box on a per-project basis.
@@ -27,5 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 		# 512 is pretty tight to run Node.js on, if you're in to that sort of thing. I've boosted this.
 		v.memory = 1024
+		# v.cpus = 2 # want another CPU?
 	end	
 end
