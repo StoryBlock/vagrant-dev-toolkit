@@ -1,1 +1,1 @@
-apt-get install build-essential git -y
+sudo apt-get install build-essential git -y
