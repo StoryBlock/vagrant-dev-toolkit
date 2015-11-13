@@ -1,2 +1,2 @@
 #!/bin/bash
-curl https://install.meteor.com/ | sudo sh
+curl https://install.meteor.com | /bin/sh
